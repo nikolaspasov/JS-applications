@@ -1,14 +1,36 @@
 function solve() {
 
-    let departButton = document.getElementById('depart');
-    let arriveButton = document.getElementById('aarive');
+    let stopName = 'depot';
+    let url = 'http://localhost:3030/jsonstore/bus/schedule/';
+    let departButton = document.querySelector('#depart')
+    let arriveButton = document.querySelector('#arrive')
+    let infoSignEl = document.querySelector('.info')
 
     function depart() {
-        console.log('Depart TODO...');
+
+        fetch(url + stopName)
+            .then(res => res.json())
+            .then(stop => {
+                infoSignEl.textContent = 'Next Stop ' + stop.name;
+                departButton.disabled = true;
+                arriveButton.disabled = false;
+               
+            })
+
+
+
     }
 
     function arrive() {
-        console.log('Arrive TODO...');
+        fetch(url + stopName)
+            .then(res => res.json())
+            .then(stop => {
+                infoSignEl.textContent = 'Arriving at ' + stop.name;
+                departButton.disabled = false;
+                arriveButton.disabled = true;
+                stopName = stop.next;
+            })
+
     }
 
     return {
