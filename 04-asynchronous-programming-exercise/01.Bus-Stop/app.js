@@ -7,9 +7,6 @@ function getInfo() {
     fetch(`http://localhost:3030/jsonstore/bus/businfo/${stopId}`)
         .then(response => response.json())
         .then(data => {
-
-
-            
             document.getElementById('stopName').textContent = data.name;
             busesUl.innerHTML = ' ';
             let buses = Object.keys(data.buses)
