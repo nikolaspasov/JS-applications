@@ -120,17 +120,7 @@ let id = recipe._id;
                 articleElement.appendChild(bandDiv);
                 articleElement.appendChild(descriptionDiv);
 
-                articleElement.addEventListener('click', function() {getRecipe(data[recipe])});
+                
                 
     });
 }
-{/* <article>
-            <div class="description">
-                <h3>Preparation:</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, quaerat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur officia ipsam nulla vitae nobis
-                    reprehenderit pariatur aut dolor exercitationem impedit.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorem odit officiis numquam
-                    corrupti? Quam.</p>
-            </div>
-</article> */}
