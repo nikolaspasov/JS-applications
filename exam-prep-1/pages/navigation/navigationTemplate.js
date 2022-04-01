@@ -2,7 +2,6 @@ import {html} from './../../node_modules/lit-html/lit-html.js'
 
 export let navigationTemplate = () => html `
 <!-- Navigation -->
-<nav>
     <a href="#">All Memes</a>
      <!-- Logged users -->
     <div class="user">
@@ -21,5 +20,4 @@ export let navigationTemplate = () => html `
         </div>
         <a class="active" href="#">Home Page</a>
     </div>
-</nav>
 `;
