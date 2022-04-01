@@ -1,6 +1,6 @@
 import { render } from "./../node_modules/lit-html/lit-html.js";
 
-export class LitRendered {
+export class LitRenderer {
 
     constructor(){}
 

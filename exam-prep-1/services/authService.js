@@ -1,4 +1,4 @@
-import jsonRequest from "../helpers/jsonRequest.js";
+import {jsonRequest} from "../helpers/jsonRequest.js";
 
 //CORRECT???
 let baseUrl = 'http://localhost:3030/users'
@@ -25,3 +25,10 @@ async function register(user){
     setUser(result);
 }
 
+
+export default{
+    login,
+    register,
+    setUser,
+    getUser
+}

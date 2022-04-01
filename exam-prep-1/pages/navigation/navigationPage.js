@@ -5,13 +5,14 @@ let _router = undefined;
 let _renderHandler = undefined;
 
 function initialize (router, renderHandler){
-    let _router = router;
-    let _renderHandler = renderHandler;
+    _router = router;
+    _renderHandler = renderHandler;
 }
 
-async function getView(context){
+async function getView(context, next){
     let templateResult = navigationTemplate();
     _renderHandler(templateResult);
+    next();
 }
 
 export default{
