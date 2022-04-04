@@ -62,7 +62,7 @@ async function submitHandler(event) {
         }
 
         await _authService.register(user);
-        _router.redirect('/home');
+        _router.redirect('/all-memes');
     }
     catch (error) {
         alert(error);

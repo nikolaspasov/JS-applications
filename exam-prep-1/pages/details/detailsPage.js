@@ -1,6 +1,4 @@
-import { allMemesTemplate } from "./allMemesTemplate.js";
-
-
+import { detailsTemplate } from "./detailsTemplate.js";
 
 let _router = undefined;
 let _renderHandler = undefined;

@@ -10,7 +10,7 @@ export let navigationTemplate = (navigationPage) => html`
 
 let loggedTemplate = (navigationPage) => html`
 <div class="user">
-    <a href="#">Create Meme</a>
+    <a href="/create">Create Meme</a>
     <div class="profile">
         <span>Welcome, ${navigationPage.email}</span>
         <a href="/profile">My Profile</a>

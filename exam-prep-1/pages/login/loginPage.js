@@ -45,7 +45,7 @@ async function submitHandler(event) {
         }
 
         let loginResult = await _authService.login(user);
-        _router.redirect('/home');
+        _router.redirect('/all-memes');
     }
     catch (error) {
         alert(error);

@@ -9,6 +9,7 @@ import { LitRenderer } from "./rendering/litRenderer.js";
 import authService from "./services/authService.js";
 import allMemesPage from "./pages/allMemes/allMemesPage.js";
 import memesService from "./services/memesService.js";
+import createPage from "./pages/create/createPage.js";
 
 let navigationElement = document.getElementById('nav');
 let homeElement = document.getElementById('app');
@@ -27,6 +28,7 @@ homePage.initialize(page, appRenderService);
 loginPage.initialize(page, appRenderService, authService);
 registerPage.initialize(page, appRenderService, authService);
 allMemesPage.initialize(page, appRenderService, memesService);
+createPage.initialize(page, appRenderService, memesService);
 
 
 page('/index.html', '/home');
@@ -41,6 +43,8 @@ page('/home', homePage.getView);
 page('/login', loginPage.getView);
 page('/register', registerPage.getView);
 page('/all-memes', allMemesPage.getView);
+page('/create', createPage.getView);
+
 
 
 page.start();
