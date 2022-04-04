@@ -1,10 +1,10 @@
-import {html} from './../../node_modules/lit-html/lit-html.js'
+import { html } from './../../node_modules/lit-html/lit-html.js'
 
 
 
-export let loginTemplate = () => html `
+export let loginTemplate = (form) => html`
         <section id="login">
-            <form id="login-form">
+            <form @submit=${form.submitHandler} id="login-form">
                 <div class="container">
                     <h1>Login</h1>
                     <label for="email">Email</label>
@@ -13,7 +13,7 @@ export let loginTemplate = () => html `
                     <input id="password" type="password" placeholder="Enter Password" name="password">
                     <input type="submit" class="registerbtn button" value="Login">
                     <div class="container signin">
-                        <p>Dont have an account?<a href="#">Sign up</a>.</p>
+                        <p>Dont have an account?<a href="/register">Sign up</a>.</p>
                     </div>
                 </div>
             </form>

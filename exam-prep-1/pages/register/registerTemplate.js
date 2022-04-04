@@ -1,8 +1,8 @@
 import {html} from './../../node_modules/lit-html/lit-html.js'
 
-export let registerTemplate = () => html `
+export let registerTemplate = (form) => html `
         <section id="register">
-            <form id="register-form">
+            <form @submit=${form.submitHandler} id="register-form">
                 <div class="container">
                     <h1>Register</h1>
                     <label for="username">Username</label>
@@ -21,7 +21,7 @@ export let registerTemplate = () => html `
                     </div>
                     <input type="submit" class="registerbtn button" value="Register">
                     <div class="container signin">
-                        <p>Already have an account?<a href="#">Sign in</a>.</p>
+                        <p>Already have an account?<a href="/login">Sign in</a>.</p>
                     </div>
                 </div>
             </form>

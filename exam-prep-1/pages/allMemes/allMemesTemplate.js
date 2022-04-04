@@ -1,68 +1,29 @@
-import {html} from './../../node_modules/lit-html/lit-html.js'
+import { html } from './../../node_modules/lit-html/lit-html.js'
 
 
-export let allMemesTemplate = () => html `
+export let allMemesTemplate = (memes) => html`
         <section id="meme-feed">
             <h1>All Memes</h1>
             <div id="memes">
-				<!-- Display : All memes in database ( If any ) -->
-                <div class="meme">
-                    <div class="card">
-                        <div class="info">
-                            <p class="meme-title">Debugging</p>
-                            <img class="meme-image" alt="meme-img" src="/images/2.png">
-                        </div>
-                        <div id="data-buttons">
-                            <a class="button" href="#">Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="meme">
-                    <div class="card">
-                        <div class="info">
-                            <p class="meme-title">Java Script</p>
-                            <img class="meme-image" alt="meme-img" src="/images/4.png">
-                        </div>
-                        <div id="data-buttons">
-                            <a class="button" href="#">Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="meme">
-                    <div class="card">
-                        <div class="info">
-                            <p class="meme-title">Yes, arrays are objects</p>
-                            <img class="meme-image" alt="meme-img" src="/images/6.png">
-                        </div>
-                        <div id="data-buttons">
-                            <a class="button" href="#">Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="meme">
-                    <div class="card">
-                        <div class="info">
-                            <p class="meme-title">Java Script joke</p>
-                            <img class="meme-image" alt="meme-img" src="/images/1.png">
-                        </div>
-                        <div id="data-buttons">
-                            <a class="button" href="#">Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="meme">
-                    <div class="card">
-                        <div class="info">
-                            <p class="meme-title">Bad code can present some problems</p>
-                            <img class="meme-image" alt="meme-img" src="/images/3.png">
-                        </div>
-                        <div id="data-buttons">
-                            <a class="button" href="#">Details</a>
-                        </div>
-                    </div>
-                </div>
-				<!-- Display : If there are no memes in database -->
-				<p class="no-memes">No memes in database.</p>
-			</div>
+                
+                ${memes.length > 0
+                    ? memes.map(meme => memeTemplate(meme))
+                    : html`<p class="no-memes">No memes in database.</p>`}
+        
+            </div>
         </section>
+`;
+
+let memeTemplate = (meme) => html`
+<div class="meme">
+    <div class="card">
+        <div class="info">
+            <p class="meme-title">${meme.title}</p>
+            <img class="meme-image" alt="meme-img" src="${meme.imageUrl}">
+        </div>
+        <div id="data-buttons">
+            <a class="button" href="/details/${meme.id}">Details</a>
+        </div>
+    </div>
+</div>
 `;
