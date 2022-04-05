@@ -10,6 +10,9 @@ import authService from "./services/authService.js";
 import allMemesPage from "./pages/allMemes/allMemesPage.js";
 import memesService from "./services/memesService.js";
 import createPage from "./pages/create/createPage.js";
+import detailsPage from "./pages/details/detailsPage.js";
+import editPage from "./pages/edit/editPage.js";
+import profilePage from "./pages/profile/profilePage.js";
 
 let navigationElement = document.getElementById('nav');
 let homeElement = document.getElementById('app');
@@ -29,6 +32,9 @@ loginPage.initialize(page, appRenderService, authService);
 registerPage.initialize(page, appRenderService, authService);
 allMemesPage.initialize(page, appRenderService, memesService);
 createPage.initialize(page, appRenderService, memesService);
+detailsPage.initialize(page,appRenderService, memesService);
+editPage.initialize(page,appRenderService, memesService);
+profilePage.initialize(page,appRenderService, memesService);
 
 
 page('/index.html', '/home');
@@ -44,6 +50,9 @@ page('/login', loginPage.getView);
 page('/register', registerPage.getView);
 page('/all-memes', allMemesPage.getView);
 page('/create', createPage.getView);
+page('/details/:id', detailsPage.getView);
+page('/edit/:id', editPage.getView);
+page('/profile', profilePage.getView);
 
 
 

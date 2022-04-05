@@ -1,9 +1,9 @@
-import {html} from './../../node_modules/lit-html/lit-html.js'
+import { html } from './../../node_modules/lit-html/lit-html.js'
 
-export let detailsTemplate = (model) => html `
+export let detailsTemplate = (model) => html`
         <section id="meme-details">
             <h1>Meme Title: ${model.meme.title}
-
+        
             </h1>
             <div class="meme-details">
                 <div class="meme-img">
@@ -14,11 +14,14 @@ export let detailsTemplate = (model) => html `
                     <p>
                         ${model.meme.description}
                     </p>
-
+        
                     <!-- Buttons Edit/Delete should be displayed only for creator of this meme  -->
-                    <a class="button warning" href="/edit/${model.meme._id}">Edit</a>
-                    <button class="button danger" @click = ${model.deleteHandler} >Delete</button>
-                    
+                    ${model.isOwner
+                        ? html`
+                        <a class="button warning" href="/edit/${model.meme._id}">Edit</a>
+                        <button class="button danger" @click=${(e)=> model.deleteHandler(model.meme._id, e)} >Delete</button>
+                        `
+                        : ''}
                 </div>
             </div>
         </section>
