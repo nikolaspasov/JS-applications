@@ -11,6 +11,7 @@ function initialize (router, renderHandler){
 
 async function getView(context){
     let templateResult = homeTemplate();
+    
     _renderHandler(templateResult);
 }
 export default {
