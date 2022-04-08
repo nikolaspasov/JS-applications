@@ -13,9 +13,11 @@ import createPage from "./pages/create/createPage.js";
 import detailsPage from "./pages/details/detailsPage.js";
 import editPage from "./pages/edit/editPage.js";
 import profilePage from "./pages/profile/profilePage.js";
+import notificationsPage from "./pages/notifications/notificationsPage.js";
 
 let navigationElement = document.getElementById('nav');
 let homeElement = document.getElementById('app');
+let notificationsElement = document.getElementById('notifications');
 
 //rendered е class, създава нов handler, който знае къде да закачи templateResult
 let renderer = new LitRenderer();
@@ -23,6 +25,7 @@ let renderer = new LitRenderer();
 //navigationRenderHandler ще получава само templateResult и ще го закача.
 let navigationRenderHandler = renderer.createRenderHandler(navigationElement)
 let appRenderService = renderer.createRenderHandler(homeElement);
+let notificationsRenderHandler = renderer.createRenderHandler(notificationsElement);
 
 
 //Does it need AUTHSERVICE ?
@@ -35,6 +38,7 @@ createPage.initialize(page, appRenderService, memesService);
 detailsPage.initialize(page,appRenderService, memesService);
 editPage.initialize(page,appRenderService, memesService);
 profilePage.initialize(page,appRenderService, memesService);
+notificationsPage.initialize(page,appRenderService, memesService);
 
 
 page('/index.html', '/home');

@@ -1,10 +1,10 @@
 import page from "./node_modules/page/page.mjs";
+
+
 import allListingsPage from "./pages/allListings/allListingsPage.js";
 import createPage from "./pages/create/createPage.js";
 import detailsPage from "./pages/details/detailsPage.js";
 import editPage from "./pages/edit/editPage.js";
-
-
 import homePage from "./pages/home/homePage.js";
 import loginPage from "./pages/login/loginPage.js";
 import myListingsPage from "./pages/myListings/myListingsPage.js";
