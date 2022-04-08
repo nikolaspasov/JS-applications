@@ -17,6 +17,11 @@ async function getAllCars() {
     let result = await jsonRequest(`${baseUrl}${urlLocation}`);
     return result;
 }
+async function getCarsbyYear(year) {
+    let urlLocation = `?where=year%3D${year}`;
+    let result = await jsonRequest(`${baseUrl}${urlLocation}`);
+    return result;
+}
 async function getUserListings(userId) {
     let urlLocation = `?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
     let result = await jsonRequest(`${baseUrl}${urlLocation}`);
@@ -49,6 +54,7 @@ export default {
     updateItem,
     deleteItem,
     getAllCars,
-    getUserListings
+    getUserListings,
+    getCarsbyYear
 }
 

@@ -4,7 +4,7 @@ export let navigationTemplate = (model) => html`
         
         <a class="active" href="/home">Home</a>
                 <a href="/car-listings">All Listings</a>
-                <a href="/by-year">By Year</a>
+                <a href="/search-cars">By Year</a>
             ${model.isLoggedIn
                 ? loggedTemplate(model)
                 : guestTemplate()}    
