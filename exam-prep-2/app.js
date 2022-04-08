@@ -32,7 +32,7 @@ allListingsPage.initialize(page, appRenderHandler, carsService);
 detailsPage.initialize(page, appRenderHandler, carsService);
 createPage.initialize(page, appRenderHandler, carsService);
 editPage.initialize(page, appRenderHandler, carsService);
-myListingsPage.initialize(page, appRenderHandler, carsService);
+myListingsPage.initialize(page, appRenderHandler, authService, carsService);
 
 
 page('/index.html', '/home');
@@ -48,6 +48,7 @@ page('/car-listings', allListingsPage.getView);
 page('/details/:id', detailsPage.getView);
 page('/create-listing', createPage.getView);
 page('/edit/:id', editPage.getView);
+page('/my-listings', myListingsPage.getView);
 
 
 

@@ -2,25 +2,29 @@ import { myListingsTemplate } from "./myListingsTemplate.js";
 
 let _router = undefined;
 let _renderHandler = undefined;
+let _authService = undefined;
 let _carsService = undefined;
 
 
-function initialize(router, renderHandler, carsService) {
+function initialize(router, renderHandler, authService, carsService) {
     _router = router;
     _renderHandler = renderHandler;
+    _authService = authService;
     _carsService = carsService;
 }
 
 
 async function getView(context){
 
-    let cars = await _carsService.getAllCars();
-    console.log(cars);
+    let userId = _authService.getUser()._id;
+    console.log(userId);
+    let userListings = await _carsService.getUserListings(userId);
+    console.log(userListings);
     let model={
-        cars
+        cars: userListings
     }
 
-    let templateResult = allListingsTemplate(model);
+    let templateResult = myListingsTemplate(model);
     _renderHandler(templateResult);
 }
 
