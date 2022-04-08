@@ -50,7 +50,7 @@ async function submitHandler(event) {
             imageUrl
         }
 
-        let loginResult = await _memesService.createItem(meme);
+        await _memesService.createItem(meme);
         _router.redirect('/all-memes');
     }
     catch (error) {

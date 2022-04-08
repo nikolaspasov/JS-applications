@@ -5,7 +5,7 @@ const { expect } = require('chai');
 const host = 'http://localhost:3000'; // Application host (NOT service host - that can be anything)
 const interval = 300;
 const DEBUG = false;
-const slowMo = 500;
+const slowMo = 4000;
 
 const mockData = require('./mock-data.json');
 const endpoints = {
@@ -283,6 +283,7 @@ describe('E2E tests', function () {
         });
 
         it('create makes correct API call for logged in user [ 10 Points ]', async () => {
+
             const data = mockData.catalog[0];
             const { post } = await handle(endpoints.create);
             const { onRequest } = post();

@@ -1,22 +1,21 @@
 import { html } from './../../node_modules/lit-html/lit-html.js'
-import navigationPage from './navigationPage.js';
 
-export let navigationTemplate = (navigationPage) => html`
+export let navigationTemplate = (model) => html`
         
         <a class="active" href="/home">Home</a>
-                <a href="/listings">All Listings</a>
+                <a href="/car-listings">All Listings</a>
                 <a href="/by-year">By Year</a>
-            ${navigationPage.isLoggedIn
-                ? loggedTemplate(navigationPage)
+            ${model.isLoggedIn
+                ? loggedTemplate(model)
                 : guestTemplate()}    
 `;
 
-let loggedTemplate = () => html`
+let loggedTemplate = (model) => html`
 <div id="profile">
-    <a>Welcome username</a>
+    <a>Welcome ${model.username}</a>
     <a href="/my-listings">My Listings</a>
     <a href="/create-listing">Create Listing</a>
-    <a href="/logout">Logout</a>
+    <a @click = ${model.logoutHandler} href="">Logout</a>
 </div>
 `;
 

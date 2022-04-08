@@ -14,6 +14,7 @@ async function getView(context){
     
     _renderHandler(templateResult);
 }
+
 export default {
     getView,
     initialize

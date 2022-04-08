@@ -1,6 +1,9 @@
+import { html } from './../../node_modules/lit-html/lit-html.js'
+
+export let createTemplate = (model) => html `
 <section id="create-listing">
             <div class="container">
-                <form id="create-form">
+                <form @submit = ${model.submitHandler} id="create-form">
                     <h1>Create Car Listing</h1>
                     <p>Please fill in this form to create an listing.</p>
                     <hr>
@@ -28,3 +31,4 @@
                 </form>
             </div>
         </section>
+        `;

@@ -1,6 +1,6 @@
 import { jsonRequest } from "../helpers/jsonRequest.js";
 
-let baseUrl = 'http://localhost:3030/data/memes'
+let baseUrl = 'http://localhost:3030/data/cars'
 
 async function getAll(){
     let result = await jsonRequest(baseUrl);
@@ -12,16 +12,16 @@ async function get(id){
     return result;
 }
 
-async function getAllMemes(){
-    let urlLocation = '?sortBy=_createdOn%20desc'
+async function getAllCars(){
+    let urlLocation = '?sortBy=_createdOn%20desc';
     let result = await jsonRequest(`${baseUrl}${urlLocation}`);
     return result;
 }
-async function getUserMemes(userId){
-    let urlLocation = `?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
-    let result = await jsonRequest(`${baseUrl}${urlLocation}`);
-    return result;
-}
+// async function getUserMemes(userId){
+//     let urlLocation = `?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
+//     let result = await jsonRequest(`${baseUrl}${urlLocation}`);
+//     return result;
+// }
 
 async function createItem(newItem){
     //url, method, body, IsAuthorized (to create new item)
@@ -48,7 +48,7 @@ export default{
     createItem,
     updateItem,
     deleteItem,
-    getAllMemes,
-    getUserMemes
+    getAllCars,
+    //getUserMemes
 }
 

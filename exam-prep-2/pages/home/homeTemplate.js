@@ -8,7 +8,7 @@ export let homeTemplate = () => html `
         <img class="hero" src="/images/car-png.webp" alt="carIntro">
         <h2>To see all the listings click the link below:</h2>
         <div>
-            <a href="/listings" class="button">Listings</a>
+            <a href="/car-listings" class="button">Listings</a>
         </div>
     </div>
 `;
