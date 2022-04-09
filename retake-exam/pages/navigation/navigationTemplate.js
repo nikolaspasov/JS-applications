@@ -1,26 +1,27 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
 
-export let navigationTemplate = () => html`
-            <h1><a class="home" href="#">GamesPlay</a></h1>
+export let navigationTemplate = (model) => html`
+            <h1><a class="home" href="/home">GamesPlay</a></h1>
             <nav>
-                <a href="#">All games</a>
-                <!-- Logged-in users -->
+                <a href="/catalog-page">All games</a>
                 
-                <!-- Guest users -->
+                ${model.isLoggedIn
+                ? loggedUserTemplate(model)
+                : guestUserTemplate() }
                 
             </nav>
             `;
 
-let loggedUserTemplate = () => html`
+let loggedUserTemplate = (model) => html`
 <div id="user">
-    <a href="#">Create Game</a>
-    <a href="#">Logout</a>
+    <a href="/create-page">Create Game</a>
+    <a href=""  @click = ${(e) => model.logoutHandler(e)}>Logout</a>
 </div>
 `;
 
 let guestUserTemplate = () => html`
 <div id="guest">
-    <a href="#">Login</a>
-    <a href="#">Register</a>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
 </div>
 `;
