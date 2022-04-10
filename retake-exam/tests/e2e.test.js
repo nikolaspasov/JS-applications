@@ -3,8 +3,8 @@ const { expect } = require('chai');
 
 const host = 'http://localhost:3000'; // Application host (NOT service host - that can be anything)
 const interval = 500;
-const DEBUG = false;
-const slowMo = 500;
+const DEBUG = true;
+const slowMo = 250;
 
 const mockData = require('./mock-data.json');
 const endpoints = {
@@ -376,7 +376,7 @@ describe('E2E tests', function () {
             expect(isHandled()).to.be.false;
         });
 
-        it('edit makes correct API call for logged in user [ 5 Points ]', async () => {
+        it.only('edit makes correct API call for logged in user [ 5 Points ]', async () => {
             const data = mockData.catalog[0];
             const data2 = mockData.catalog[2];
             const { get, put } = await handle(endpoints.details(data._id));
